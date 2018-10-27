@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:c="http://java.sun.com/jsp/jstl/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="./../resources/main.xhtml">
+
+    <ui:define name="tarefas">
+        <p:fieldset legend="Informations Etudiant">
+        <h:form id="form">
+            <p:panelGrid columns="2" layout="grid">     
+                <!--<p:growl id="msgs" showDetail="true" />-->
+                <p:dataTable id="singleDT" var="car" value="#{infoController.etudiantList2}" 
+                             selectionMode="single" selection="#{infoController.etudiant}" rowKey="#{car.id}">
+                    <!--                    <f:facet name="header">
+                                            Select Events
+                                        </f:facet>-->
+                    <p:ajax event="rowSelect" listener="#{infoController.onRowSelect}" update="@form" />
+<!--                    <f:facet name="header">
+                        <p:outputPanel>
+                            <h:outputText value="Search all fields:" />
+                            <p:inputText id="globalFilter" onkeyup="PF('carsTable').filter()" 
+                                         style="width:150px" placeholder="Enter keyword"/>
+                        </p:outputPanel>
+                    </f:facet>-->
+
+                    <p:column filterBy="#{car.utilisateurNom}" headerText="Nom" footerText="contains" filterMatchMode="contains">
+                        <h:outputText value="#{car.utilisateurNom} #{car.utilisateurPrenom}" />
+                    </p:column>
+                </p:dataTable>
+                
+
+                <p:outputPanel  style="text-align:center; width: 100% !important;">
+                    <h:outputText  value="Fiche d'informations" style=" width: 100% !important; 
+                                       margin-left: -92px;  font-size: large; margin-right: 40px !important;"/>
+                    
+                    <p:panelGrid id="carDetail1" columns="2" rendered="#{not empty infoController.listNotes}"
+                                 columnClasses="label,value"  style=" width: 100% !important; margin-bottom: 10px;">
+
+
+                        <h:outputText value="Matricule:" />
+                        <h:outputText value="#{infoController.etudiant.etudiantNumMatricule}" />
+
+                        <h:outputText value="Nom" />
+                        <h:outputText value="#{infoController.etudiant.utilisateurNom}" />
+
+                        <h:outputText value="Prénom" />
+                        <h:outputText value="#{infoController.etudiant.utilisateurPrenom}" />
+
+                        <h:outputText value="Date naissance" />
+                        <h:outputText value="#{infoController.etudiant.etudiantDateNais}" />
+
+                        <h:outputText value="Sexe" />
+                        <h:outputText value="#{infoController.etudiant.etudiantSexe.sexeLibelle}" />
+
+                        <h:outputText value="Nationalité" />
+                        <h:outputText value="#{infoController.etudiant.etudiantNationalite}" />
+
+                        <h:outputText value="Promotion" />
+                        <h:outputText value="#{infoController.etudiant.etudiantPromotion.promotionCode}" />
+
+                        <h:outputText value="Filière" />
+                        <h:outputText value="#{infoController.etudiant.etudiantFiliere.filiereLibelle}" />
+
+                        <h:outputText value="E-mail" />
+                        <h:outputText value="#{infoController.etudiant.utilisateurEmail}" />
+                       
+                        <h:outputText value="Login" />
+                        <h:outputText value="#{infoController.etudiant.login}" />
+                        
+                        <h:outputText value="Permission" />
+                        <h:outputText value="#{infoController.etudiant.permission}" />
+                        
+                    </p:panelGrid>
+                    
+                    <h:outputText  value="Fiche de notes" style=" width: 100% !important; 
+                                       margin-left: -92px;  font-size: large; margin-right: 40px !important;"/>
+                    
+                    <p:dataTable id="carDetail" var="car" value="#{infoController.listNotes}" widgetVar="carsTable"
+                                 emptyMessage="No Etudiant found with given criteria" rowKey="#{car.id}" 
+                                 style="margin-bottom: 26px; margin-top: 10px;">
+
+
+                        <p:column  headerText="Module" >
+                            <h:outputText value="#{car.matiereNote.matiereTitre}" />
+                        </p:column>
+                        <p:column  headerText="Note obtenue" >
+                            <h:outputText value="#{car.noteObtenue}" />
+                        </p:column>
+                        
+                    </p:dataTable>
+                    <!--<p:panelGrid  style=" width: 100% !important;">-->
+                    <h:outputText  value="Moyenne obtenue" style=" width: 100% !important; 
+                                       margin-left: -92px;  font-size: large; margin-right: 40px !important;"/>
+                    <h:outputText value="#{infoController.average}"  style=" border: 3px solid black;  padding: 2px;"/>
+                    <!--</p:panelGrid>-->
+                </p:outputPanel>
+
+
+            </p:panelGrid>
+        </h:form>
+            </p:fieldset>
+    </ui:define>
+</ui:composition>

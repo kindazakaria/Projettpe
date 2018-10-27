@@ -67,15 +67,15 @@
                   
                     <form  method="post" action="Servlogin"  autocomplete="off">
                      <label>username : </label>
-                        <input type="text" class="form-control"  name="nom"  value="<c:out value="${param.nom}"/>"  required="required"/>
+                        <input type="text" class="form-control"  name="nom"  value="<c:out value="${param.nom}" />"  required="required"/>
                         <span style="color:red;"> ${erreur.nomp}</span><br/>
                         <label>Password :  </label>
-                        <input type="password" class="form-control" name="passwd" required="required" />
+                        <input type="password" class="form-control" name="passwd"  required="required" />
                         <span style="color:red;"> ${erreur.motpass}</span><br/>
                         <hr />
                        <!--  <a href="index.html" class="btn btn-info"><span class="glyphicon glyphicon-user"></span> &nbsp;se connecter </a>&nbsp;--> 
                         
-                        <button type="submit" class="btn btn-lg btn-primary btn-block pull-left" ><span class="glyphicon glyphicon-user"></span> <span> &nbsp;se connecter&nbsp;</span> </button>
+                        <button  type="submit" name="submit" class="btn btn-lg btn-primary btn-block pull-left" ><span class="glyphicon glyphicon-user"></span> <span> &nbsp;se connecter&nbsp;</span> </button>
                         
                    </form>
                 </div>
@@ -106,7 +106,7 @@
                  <div class="row">
                  <div class="col-md-6">
                  <div class="row">
-                 	<div class="col-md-4"> <a href='<c:url value="/inscription"></c:url>' class="pull-left">s'inscrire? </a><span class="clearfix"></span> </div>
+                 	<div class="col-md-4" name="inscrire" > <a href='<c:url value="/inscription" ></c:url>' class="pull-left">s'inscrire? </a><span class="clearfix"></span> </div>
       
                     <a href="#" class="pull-right">password oublié? </a><span class="clearfix"></span>
                  </div>

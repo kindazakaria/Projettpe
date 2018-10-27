@@ -98,13 +98,13 @@
 
     <div class="form-group">
       <label class="control-label" for="text">Nom</label>
-      <input id="Nom" type="text" class="form-control" placeholder="nom" required="required" name="nom" value="<c:out value="${param.nom}"/>">
+      <input  type="text" class="form-control" placeholder="nom" required="required" name="nom" value="<c:out value="${param.nom}"/>">
        <span><c:out value="${erreur.nom}"></c:out></span>
   </div>
 
   <div class="form-group">
       <label class="control-label" for="text">prenom</label>
-      <input id="prenom" type="text" class="form-control" placeholder="prenom" required="required" name="prenom"  value="<c:out value="${param.prenom }"/>">
+      <input type="text" class="form-control" placeholder="prenom" required="required" name="prenom"  value="<c:out value="${param.prenom }"/>">
       <div  class="alert alert-block alert-danger" style="display: none" id="pren"> le prenom est obligatoire</div>
       <span style="color: red;" ><c:out value="${erreur.prenom}"></c:out></span>
     </div>
@@ -134,19 +134,19 @@
                                                 <option>admin</option>
                                             </select>
     </div>
-    <div class="form-group" id="motv">
-      <label class="control-label" for="text">Mote de pass</label>
-      <input id="motpass" type="password" class="form-control" placeholder="password" required="required" name="motp">
+    <div class="form-group" >
+      <label class="control-label" for="text">Mot de pass</label>
+      <input  type="password" class="form-control" placeholder="password" required="required" name="motp">
       
       <span style="color: red;" ><c:out value="${erreur.motpass}"></c:out></span>
     </div> 
     <div class="form-group">
       <label class="control-label" for="text">Date de Naissance</label>
-      <input id="datenaissnce" type="Date" class="form-control" placeholder="date de naissance" required="required" name="datn" max="2007-08-13">
+      <input  type="Date" class="form-control" placeholder="date de naissance" required="required" name="datn" max="2050-08-13">
       <div  class="alert alert-block alert-danger" style="display: none"> la date de naissance est obligatoire</div>
     </div> 
      <br/>
-    <button type="submit" class=" form-control btn btn-primary pull-right">Envoyer</button>
+    <button type="submit" name="submit" class=" form-control btn btn-primary pull-right" >Envoyer</button>
     
   </form>
 </div>

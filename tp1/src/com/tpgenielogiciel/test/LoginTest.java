@@ -12,14 +12,14 @@ class LoginTest {
 	Utilisatcontrole n =new Utilisatcontrole();
     int val = n.utiliexist("adama", "sow");
   
-	@Test
-	void test() {
-		assertNotSame(val, 0);
-	}
+	//@Test
+	//void test() {
+	//	assertNotSame(val, 43);
+	//}
 	
 	@Test
 	void testFail() {
-		assertEquals(val, 0);
+		assertEquals(val, 43);
 	}
 
 }

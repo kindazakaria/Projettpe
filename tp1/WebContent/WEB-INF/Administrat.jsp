@@ -62,12 +62,12 @@
                     <ul class="nav">
 
                         <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" id ="icon">
                                 <span class="glyphicon glyphicon-user" style="font-size: 25px;"></span>
                             </a>
                             <div class="dropdown-menu dropdown-settings">
                                 <div class="media">
-                                    <a class="media-left" href="#">
+                                    <a class="media-left" href="#" id ="icon">
                                         <!--  <img src="styl/assets/img/64-64.jpg" alt="" class="img-rounded" />-->
                                     </a>
                                     <div class="media-body">
@@ -80,7 +80,7 @@
                                 <h5><strong>Information  : </strong></h5>
                                 .
                                 <hr />
-                                <a href="#" class="btn btn-info btn-sm"></a>&nbsp; <a href='<c:url value="/ServAdmindecon"></c:url>' class="btn btn-danger btn-sm">Se deconnecter</a>
+                                <a href="#"  class="btn btn-info btn-sm"></a>&nbsp; <a href='<c:url value="/ServAdmindecon"></c:url>' class="btn btn-danger btn-sm" id = "deconnecter">Se deconnecter</a>
 
                             </div>
                         </li>
