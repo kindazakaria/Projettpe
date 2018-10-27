@@ -37,7 +37,7 @@ public class Adherentcontrl {
 		calStr1.setTime(new Date()); // Initialisation du calendrier avec la date du jour
 		calStr1.add(GregorianCalendar.YEAR, +1); // On retranche 1 année
 		//String formatDate = "yyyy"; // Création du format pour afficher l'année sur 4 chiffres
-		String formatDate = "dd/MM/yyyy";
+		String formatDate = "dd/MM/yyyy "; 
 		SimpleDateFormat sdf = new SimpleDateFormat(formatDate);
 		// Initialisation du format de l'année sur 4 chiffres
 		String dat2 = sdf.format(calStr1.getTime());
